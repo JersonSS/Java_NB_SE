@@ -8,6 +8,9 @@ public class EJ02 extends javax.swing.JFrame {
     
     public EJ02() {
         initComponents();
+        
+        setTitle("EJERCICIO02 USANDO PROCEDIMIENTOS");
+        
     }
 
     /**

@@ -15,6 +15,9 @@ public class EJ02F extends javax.swing.JFrame {
      */
     public EJ02F() {
         initComponents();
+        
+        setTitle("EJERCICIO02 USANDO FUNCION");
+        
     }
 
     /**
@@ -26,21 +29,126 @@ public class EJ02F extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnEjecutar = new javax.swing.JButton();
+        txtClave = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txaImprimir = new javax.swing.JTextArea();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        txtDuracion = new javax.swing.JTextField();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        btnEjecutar.setText("Ejecutar");
+        btnEjecutar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEjecutarActionPerformed(evt);
+            }
+        });
+
+        txtClave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtClaveActionPerformed(evt);
+            }
+        });
+
+        txaImprimir.setColumns(20);
+        txaImprimir.setRows(5);
+        jScrollPane2.setViewportView(txaImprimir);
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("Clave\tZona\t\tPrecio\n1\tEstados Unidos\t\t0.13\n2\tCanadá\t\t0.11\n5\tAmérica del Sur\t\t0.22\n6\tAmérica Central\t\t0.19\n7\tMéxico\t\t0.17\n9\tEuropa\t\t0.17\n10\tAsia\t\t0.20\n15\tÁfrica\t\t0.39\n20\tOceania\t\t0.28");
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jLabel1.setText("Clave:");
+        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+
+        jLabel2.setText("Duración de llamada:");
+        jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+
+        txtDuracion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDuracionActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtClave, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(43, 43, 43)
+                                .addComponent(txtDuracion, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(94, 94, 94)
+                        .addComponent(btnEjecutar))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtClave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtDuracion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addComponent(btnEjecutar)
+                .addGap(28, 28, 28)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(91, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnEjecutarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEjecutarActionPerformed
+
+        // ENTRADA
+        int clave = Integer.parseInt(txtClave.getText());
+        int duracion = Integer.parseInt(txtDuracion.getText());
+
+        // PROCESO
+        double costoTotal = this.getCosto(clave, duracion);
+
+        // SALIDA
+        txaImprimir.setText(null);
+        if (costoTotal > 0) {
+            txaImprimir.append("Costo total de la llamada: S/ " + String.format("%.2f", costoTotal));
+        } else {
+            txaImprimir.append("Clave de zona inválida.");
+        }
+
+    }//GEN-LAST:event_btnEjecutarActionPerformed
+
+    private void txtClaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtClaveActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtClaveActionPerformed
+
+    private void txtDuracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDuracionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDuracionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -76,7 +184,67 @@ public class EJ02F extends javax.swing.JFrame {
             }
         });
     }
+    
+    public double getCosto(int clave, int duracion)
+    {
+        double costoTotal=0.0;
+        double costoPorMinuto;
+        
+        switch (clave) {
+            case 1:
+                costoPorMinuto = 0.13;
+                break;
+            case 2:
+                costoPorMinuto = 0.11;
+                break;
+            case 5:
+                costoPorMinuto = 0.22;
+                break;
+            case 6:
+                costoPorMinuto = 0.19;
+                break;
+            case 7:
+                costoPorMinuto = 0.17;
+                break;
+            case 9:
+                costoPorMinuto = 0.17;
+                break;
+            case 10:
+                costoPorMinuto = 0.20;
+                break;
+            case 15:
+                costoPorMinuto = 0.39;
+                break;
+            case 20:
+                costoPorMinuto = 0.28;
+                break;
+            default:
+                costoPorMinuto = 0.0; 
+                break;
+        }
+
+        
+        if (costoPorMinuto > 0) {
+            costoTotal = (duracion / 60.0) * costoPorMinuto;
+            return costoTotal;
+        } else {
+            costoTotal = 0;
+            return costoTotal;
+        }
+        
+        
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEjecutar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea txaImprimir;
+    private javax.swing.JTextField txtClave;
+    private javax.swing.JTextField txtDuracion;
     // End of variables declaration//GEN-END:variables
 }

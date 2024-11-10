@@ -8,7 +8,7 @@ public class EJ01 extends javax.swing.JFrame {
     public EJ01() {
         initComponents();
         
-        setTitle("APLICACIÓN USANDO PROCEDIMIENTOS");
+        setTitle("EJERCICIO01 USANDO PROCEDIMIENTOS");
     }
 
     /**

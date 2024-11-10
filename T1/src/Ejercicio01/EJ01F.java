@@ -7,7 +7,7 @@ public class EJ01F extends javax.swing.JFrame {
     public EJ01F() {
         initComponents();
         
-        setTitle("APLICACIÓN USANDO FUNCION");
+        setTitle("EJERCICIO01 USANDO FUNCION");
     }
 
 
