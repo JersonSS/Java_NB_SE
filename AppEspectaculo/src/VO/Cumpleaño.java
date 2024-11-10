@@ -18,10 +18,10 @@ public class Cumpleaño extends Espectaculo
     }
 
     //contructor padre-hijo ->el hijo cumpleaño necesita de las propiedades del padre para armarlafuncion
-    public Cumpleaño(int espectaculo_id, String descripcion, String patrocinador, LocalDate fpresentacion, double entrada, int duracion, String lugar, int aforo, double inversion, String cumpleañearo, LocalDate fcumpleaño, boolean isPayaso, boolean isHoraLoca, boolean isPiñata, boolean isOrquesta, String tipoShow) {
+
+    public Cumpleaño(int espectaculo_id, String descripcion, String patrocinador, LocalDate fpresentacion, double entrada, double bebida, int nro_asistentes, int duracion, String lugar, int aforo, double inversion, String cumpleañearo, LocalDate fcumpleaño, boolean isPayaso, boolean isHoraLoca, boolean isPiñata, boolean isOrquesta, String tipoShow) {
         
-         //constructor padre
-        super(espectaculo_id, descripcion, patrocinador, fpresentacion, entrada, duracion, lugar, aforo, inversion);
+        super(espectaculo_id, descripcion, patrocinador, fpresentacion, entrada, bebida, nro_asistentes, duracion, lugar, aforo, inversion);
         
         this.cumpleañearo = cumpleañearo;
         this.fcumpleaño = fcumpleaño;
@@ -32,6 +32,7 @@ public class Cumpleaño extends Espectaculo
         this.tipoShow = tipoShow;
     }
     
+    
     public void detalle(JTextArea textArea)
     {
         
@@ -39,7 +40,25 @@ public class Cumpleaño extends Espectaculo
     
     public double getTotal()
     {
-        return 0.0;   
+        double donacion=0.0;
+        
+        if(isPayaso&&isHoraLoca)
+        {
+            inversion=1.10*inversion;
+        }
+        else if (isPayaso&& isHoraLoca && isOrquesta) {
+            inversion=1.50*inversion;
+        }
+        
+        if(tipoShow.equals("Adulto"))
+        {
+            donacion=2000.0;
+        }
+        
+        double gastoExtra=inversion-getGastoBasico();
+        double total = donacion-super.getGastoBasico()-gastoExtra;
+        
+        return total;
     }
 
     public String getCumpleañearo() {

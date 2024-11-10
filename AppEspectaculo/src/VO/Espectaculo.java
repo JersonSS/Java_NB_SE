@@ -7,31 +7,37 @@ import javax.swing.JTextArea;
 
 public class Espectaculo 
 {
-    private int espectaculo_id;
-    private String descripcion;
-    private String patrocinador;
-    private LocalDate fpresentacion;
-    private double entrada;
-    private int duracion;
-    private String lugar;
-    private int aforo;
-    private double inversion;
+    protected int espectaculo_id;
+    protected String descripcion;
+    protected String patrocinador;
+    protected LocalDate fpresentacion;
+    protected double entrada;
+    protected double bebida;
+    protected int nro_asistentes;
+    protected int duracion;
+    protected String lugar;
+    protected int aforo;
+    protected double inversion;
 
     public Espectaculo() {
     }
-    
-    
-    public Espectaculo(int espectaculo_id, String descripcion, String patrocinador, LocalDate fpresentacion, double entrada, int duracion, String lugar, int aforo, double inversion) {
+
+    public Espectaculo(int espectaculo_id, String descripcion, String patrocinador, LocalDate fpresentacion, double entrada, double bebida, int nro_asistentes, int duracion, String lugar, int aforo, double inversion) {
         this.espectaculo_id = espectaculo_id;
         this.descripcion = descripcion;
         this.patrocinador = patrocinador;
         this.fpresentacion = fpresentacion;
         this.entrada = entrada;
+        this.bebida = bebida;
+        this.nro_asistentes = nro_asistentes;
         this.duracion = duracion;
         this.lugar = lugar;
         this.aforo = aforo;
         this.inversion = inversion;
     }
+    
+    
+
     
     public void detalle(JTextArea textArea)
     {
@@ -40,7 +46,7 @@ public class Espectaculo
     
     public double getGastoBasico()
     {
-        return 0.0;
+        return 4000.0;
     }
 
     public double getGananciaEntrada()
@@ -57,7 +63,7 @@ public class Espectaculo
     {
         return 0.0;   
     }
-    
+
     public int getEspectaculo_id() {
         return espectaculo_id;
     }
@@ -98,6 +104,22 @@ public class Espectaculo
         this.entrada = entrada;
     }
 
+    public double getBebida() {
+        return bebida;
+    }
+
+    public void setBebida(double bebida) {
+        this.bebida = bebida;
+    }
+
+    public int getNro_asistentes() {
+        return nro_asistentes;
+    }
+
+    public void setNro_asistentes(int nro_asistentes) {
+        this.nro_asistentes = nro_asistentes;
+    }
+
     public int getDuracion() {
         return duracion;
     }
@@ -130,6 +152,7 @@ public class Espectaculo
         this.inversion = inversion;
     }
     
+   
     
     
 }
