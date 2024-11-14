@@ -33,11 +33,34 @@ public class Cumpleaño extends Espectaculo
     }
     
     
+    @Override
     public void detalle(JTextArea textArea)
     {
+        textArea.append("Expectaculo ID: "+super.espectaculo_id);
+        textArea.append("\nDescripcion: "+super.descripcion);
+        textArea.append("\nPatrocinador: "+super.patrocinador);
+        textArea.append("\nEntrada: "+super.entrada);
+        textArea.append("\nBebida: "+super.bebida);
+        textArea.append("\nNro. de asistentes: "+super.nro_asistentes);
+        textArea.append("\nDuración: "+super.duracion);
+        textArea.append("\nLugar: "+super.lugar);
+        textArea.append("\nAforo: "+super.aforo);
+        textArea.append("\nInversión: "+super.inversion);
         
+        textArea.append("\nCumpleaño: "+this.cumpleañearo);
+        textArea.append("\nFecha de cumpleaños: "+this.fcumpleaño);
+        textArea.append("\nCon payaso:: "+this.isPayaso);
+        textArea.append("\nCon hora loca: "+this.isHoraLoca);
+        textArea.append("\nCon piñata: "+this.isPiñata);
+        textArea.append("\nCon orquesta: "+this.isOrquesta);
+        textArea.append("\nTipo de show: "+this.tipoShow);
+        
+        textArea.append("\nGasto basico: "+super.getGastoBasico());
+        textArea.append("\nTotal Ganancia/perdida: "+this.getTotal());
+        textArea.append("\n\n");
     }
     
+    @Override
     public double getTotal()
     {
         double donacion=0.0;

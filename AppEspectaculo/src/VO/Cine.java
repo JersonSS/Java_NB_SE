@@ -29,11 +29,34 @@ public class Cine extends Espectaculo
     
    
     
+    @Override
     public void detalle(JTextArea textArea)
     {
+        textArea.append("Expectaculo ID: "+super.espectaculo_id);
+        textArea.append("\nDescripcion: "+super.descripcion);
+        textArea.append("\nPatrocinador: "+super.patrocinador);
+        textArea.append("\nEntrada: "+super.entrada);
+        textArea.append("\nBebida: "+super.bebida);
+        textArea.append("\nNro. de asistentes: "+super.nro_asistentes);
+        textArea.append("\nDuración: "+super.duracion);
+        textArea.append("\nLugar: "+super.lugar);
+        textArea.append("\nAforo: "+super.aforo);
+        textArea.append("\nInversión: "+super.inversion);
         
+        textArea.append("\nTipo de Pantalla: "+this.tipoPantalla);
+        textArea.append("\nNro_salas: "+this.nro_salas);
+        textArea.append("\nNro de Peliculas: "+this.nro_asistentes);
+        textArea.append("\nCosto Combo: "+this.costo_combo);
+         textArea.append("\nPelicula en 4D: "+this.is4D);
+        
+        textArea.append("\nGasto basico: "+super.getGastoBasico());
+        textArea.append("\nGanancia de entradas: "+this.getGananciaEntrada());
+        textArea.append("\nGanancia de bebidas: "+this.getGananciaCombos());
+        textArea.append("\nTotal Ganancia/perdida: "+this.getTotal());
+        textArea.append("\n\n");
     }
 
+    @Override
     public double getGananciaEntrada()
     {
         if(tipoPantalla.equals("Grande"))
@@ -55,7 +78,7 @@ public class Cine extends Espectaculo
             aumento=0.10*costo_combo;
         }
         
-        if(aforo>=500&&aforo>=700)
+        if(aforo>=500&&aforo>=750)
         {
             descuento=0.15*costo_combo;
         }
@@ -67,6 +90,7 @@ public class Cine extends Espectaculo
         return ganancia;
     }
     
+    @Override
     public double getTotal()
     {
         

@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import javax.swing.JTextArea;
 
 
-public class Espectaculo 
+public abstract class Espectaculo 
 {
     protected int espectaculo_id;
     protected String descripcion;
@@ -39,16 +39,14 @@ public class Espectaculo
     
 
     
-    public void detalle(JTextArea textArea)
-    {
-        
-    }
+    public abstract void detalle(JTextArea textArea);
     
     public double getGastoBasico()
     {
         return 4000.0;
     }
 
+  
     public double getGananciaEntrada()
     {
         return 0.0;
@@ -59,10 +57,8 @@ public class Espectaculo
         return 0.0;
     }
     
-    public double getTotal()
-    {
-        return 0.0;   
-    }
+      //abstracto por que lo hijos lo tienen
+    public abstract double getTotal();
 
     public int getEspectaculo_id() {
         return espectaculo_id;

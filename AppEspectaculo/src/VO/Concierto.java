@@ -25,11 +25,31 @@ public class Concierto extends Espectaculo
     }
 
     
+    @Override
     public void detalle(JTextArea textArea)
     {
+        textArea.append("Expectaculo ID: "+super.espectaculo_id);
+        textArea.append("\nDescripcion: "+super.descripcion);
+        textArea.append("\nPatrocinador: "+super.patrocinador);
+        textArea.append("\nEntrada: "+super.entrada);
+        textArea.append("\nBebida: "+super.bebida);
+        textArea.append("\nNro. de asistentes: "+super.nro_asistentes);
+        textArea.append("\nDuración: "+super.duracion+" min.");
+        textArea.append("\nLugar: "+super.lugar);
+        textArea.append("\nAforo: "+super.aforo);
+        textArea.append("\nInversión: "+super.inversion);
+        textArea.append("\nGénero Musical: "+this.generoMusical);
+        textArea.append("\nArtista: "+this.artista);
+        textArea.append("\nExtranjero: "+this.isExtranjero);
+        textArea.append("\nGasto basico: "+super.getGastoBasico());
+        textArea.append("\nGanancia de entradas: "+this.getGananciaEntrada());
+        textArea.append("\nGanancia de bebidas: "+this.getGananciaBebidas());
+        textArea.append("\nTotal Ganancia/perdida: "+this.getTotal());
+        textArea.append("\n\n");
         
     }
 
+    @Override
     public double getGananciaEntrada()
     {   
         if(duracion>=4)
@@ -46,6 +66,7 @@ public class Concierto extends Espectaculo
         return ganancia;
     }
     
+    @Override
     public double getGananciaBebidas()
     {
         switch(artista)
@@ -55,10 +76,13 @@ public class Concierto extends Espectaculo
             case "Deivis Orozco": bebida=3.00*bebida;break;
        
         }
+        
+        double ganancia = bebida*nro_asistentes;
 
-        return bebida;
+        return ganancia;
     }
     
+    @Override
     public double getTotal()
     {
         double gastoExtra=super.inversion-super.getGastoBasico();
