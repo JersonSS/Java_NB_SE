@@ -591,7 +591,7 @@ public class EventoFrame extends javax.swing.JFrame {
     if (tbEvento.getSelectedIndex() == 1) {  // Crucero
         // Crucero
         String tipoCabina = cboTipoCabina.getSelectedItem().toString();
-        int duracion_travesia = Integer.parseInt(txtDuracion.getText());
+        int duracion_travesia = Integer.parseInt(txtDuracionTravesia.getText());
         
         boolean  isEntretenimientoIncluido=false;            
             if( cboEntrenimiento.getSelectedItem().toString().equals("SI"))

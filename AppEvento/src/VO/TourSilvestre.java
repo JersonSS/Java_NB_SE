@@ -98,7 +98,7 @@ public double getTipoVehiculos() {
         if (temporada_tarifa.equals("Baja")) {
             ingreso *= 0.80; // Descuento del 20%
         } else if (temporada_tarifa.equals("Alta")) {
-            ingreso *= 0.90; // Descuento del 10%
+            ingreso *= 1.10; // Aumenta del 10%
         }
         
         return ingreso * super.nro_participantes;
