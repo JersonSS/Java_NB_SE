@@ -54,17 +54,19 @@ public class Concierto extends Espectaculo
     {   
         if(duracion>=4)
         {
-            entrada=+100;
+            entrada+=100;
         }
         else
         {
-            entrada=+75;
+            entrada+=75;
         }
         
         double ganancia=entrada*nro_asistentes;
         
         return ganancia;
     }
+    
+   
     
     @Override
     public double getGananciaBebidas()
@@ -86,7 +88,7 @@ public class Concierto extends Espectaculo
     public double getTotal()
     {
         double gastoExtra=super.inversion-super.getGastoBasico();
-        double total=-this.getGananciaEntrada()+this.getGananciaBebidas()-super.getGastoBasico()-gastoExtra;
+        double total=this.getGananciaEntrada()+this.getGananciaBebidas()-super.getGastoBasico()-gastoExtra;
         return total;   
     }
 

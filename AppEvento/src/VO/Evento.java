@@ -3,60 +3,44 @@ package VO;
 import java.time.LocalDate;
 import javax.swing.JTextArea;
 
-public class Evento 
+public abstract class Evento 
 {
     protected int evento_id;
     protected String nombre;
     protected String organizador;
+    protected String descripcion;
     protected LocalDate fecha;
-    protected double precio_base;
+    protected double precio_entrada;
     protected int nro_participantes;
     protected int duracion_dias;
     protected String ubicacion;
-    protected double costo_adicional;//para publicidad,servicios
+    protected double inversion;
+    protected String temporada_tarifa;
 
     public Evento() {
     }
 
-    public Evento(int evento_id, String nombre, String organizador, LocalDate fecha, double precio_base, int nro_participantes, int duracion_dias, String ubicacion, double costo_adicional) {
+    public Evento(int evento_id, String nombre, String organizador, String descripcion, LocalDate fecha, double precio_entrada, int nro_participantes, int duracion_dias, String ubicacion, double inversion, String temporada_tarifa) {
         this.evento_id = evento_id;
         this.nombre = nombre;
         this.organizador = organizador;
+        this.descripcion = descripcion;
         this.fecha = fecha;
-        this.precio_base = precio_base;
+        this.precio_entrada = precio_entrada;
         this.nro_participantes = nro_participantes;
         this.duracion_dias = duracion_dias;
         this.ubicacion = ubicacion;
-        this.costo_adicional = costo_adicional;
+        this.inversion = inversion;
+        this.temporada_tarifa = temporada_tarifa;
     }
     
-     public void detalle(JTextArea textArea)
-    {
-        textArea.append("Evento ID: " + getEvento_id());
-        textArea.append("\nNombre: " + getNombre());
-        textArea.append("\nOrganizador: " + getOrganizador());
-        textArea.append("\nFecha: " + getFecha());
-        textArea.append("\nPrecio Base: " + getCostoBase());
-        textArea.append("\nNúmero de Participantes: " + getNro_participantes());
-        textArea.append("\nDuración (días): " +getDuracion_dias() );
-        textArea.append("\nUbicación: " + getUbicacion());
-        textArea.append("\nCosto Adicional: " + getCosto_adicional());
-    }
-    
+    public abstract void detalle(JTextArea area);
     public double getCostoBase()
     {
-        return 3000.0;
+          return 5000.0;
     }
-
-    public double getIngreso()
-    {
-        return 0.0;
-    }
-    
-    public double getGostoTotal()
-    {
-        return 0.0;
-    }
+    public abstract double getIngreso();
+    public abstract double getGanancia();
     
     
 
@@ -84,6 +68,14 @@ public class Evento
         this.organizador = organizador;
     }
 
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
     public LocalDate getFecha() {
         return fecha;
     }
@@ -92,12 +84,12 @@ public class Evento
         this.fecha = fecha;
     }
 
-    public double getPrecio_base() {
-        return precio_base;
+    public double getPrecio_entrada() {
+        return precio_entrada;
     }
 
-    public void setPrecio_base(double precio_base) {
-        this.precio_base = precio_base;
+    public void setPrecio_entrada(double precio_entrada) {
+        this.precio_entrada = precio_entrada;
     }
 
     public int getNro_participantes() {
@@ -124,13 +116,22 @@ public class Evento
         this.ubicacion = ubicacion;
     }
 
-    public double getCosto_adicional() {
-        return costo_adicional;
+    public double getInversion() {
+        return inversion;
     }
 
-    public void setCosto_adicional(double costo_adicional) {
-        this.costo_adicional = costo_adicional;
+    public void setInversion(double inversion) {
+        this.inversion = inversion;
     }
+
+    public String getTemporada_tarifa() {
+        return temporada_tarifa;
+    }
+
+    public void setTemporada_tarifa(String temporada_tarifa) {
+        this.temporada_tarifa = temporada_tarifa;
+    }
+
     
     
     

@@ -1,5 +1,5 @@
 Condiciones Específicas
-Costo Base: Cada tipo de evento tiene un costo base de 3000.
+Gasto Base: Cada tipo de evento tiene un costo base de 5000.
 
 Excursion:
 
@@ -11,6 +11,6 @@ Si el tipo de cabina es "suite", el ingreso o la entrada aumenta en un 50%.
 Si la comida está incluida, el costo de la entrada  o ingreso aumenta en un 15%.
 Si el entretenimiento está incluido, el costo  de la entrada o ingreso aumenta en un 20%.
 
-Safari:
+TourSilvestre:
 Si el tipo de vehículo es "jeep", el costo de la entrada o ingreso aumenta en un 30%.
 Si el seguro está incluido, el costo adicional aumenta en un 15%.

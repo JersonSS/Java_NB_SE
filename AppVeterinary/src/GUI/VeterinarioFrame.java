@@ -52,12 +52,16 @@ public class VeterinarioFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        txtVeterinarioId.setText("1");
+
         txaImprimir.setColumns(20);
         txaImprimir.setRows(5);
         jScrollPane1.setViewportView(txaImprimir);
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("Nombre:");
+
+        txtNombre.setText("Carlos Antonio");
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("Género:");
@@ -91,20 +95,32 @@ public class VeterinarioFrame extends javax.swing.JFrame {
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel6.setText("Apellido:");
 
+        txtApellido.setText("Valle Caceres");
+
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel7.setText("DNI:");
+
+        txtDNI.setText("12345678");
 
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel8.setText("Telefono:");
 
+        txtTelefono.setText("1111222233");
+
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel9.setText("Correo:");
+
+        txtCorreo.setText("carlos.antonio@hotmail.com");
 
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel10.setText("Especialidad:");
 
+        txtExpecialidad.setText("Cirugia");
+
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel11.setText("Años de Experiencia:");
+
+        txtAExperiencia.setText("5");
 
         DateFnacimiento.setDateFormatString("dd-MM-yyyy");
         DateFnacimiento.setMaxSelectableDate(new java.util.Date(253370786509000L));
